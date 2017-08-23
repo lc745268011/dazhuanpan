@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://www.suchso.com/code/wxshake/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>微信摇一摇红包</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../res/css/reset.css"/>
+    <link rel="stylesheet" href="../res/css/shaked.css"/>
+    <link rel="stylesheet" href="../res/css/need/layer.css"/>
+</head>
+<body>
+    <div id="hand" class="hand">
+        <img src="../res/images/hand.png">
+    </div>
+    <button onclick="doResult()" class="shaked_btn"></button>
+    <a href="#" class="activity_rules">活动规则</a>
+    <script src="../res/js/layer.js"></script>
+<script>
+    var audio_shake;
+    window.onload = function () {
+        initAudio();
+    }
+    var initAudio = function () {
+        audio_shake = document.createElement("audio");
+        audio_shake.src = '../res/mp3/shakes.mp3';
+    }
+
+    var SHAKE_THRESHOLD = 1800;
+    var last_update = 0;
+    var x = y = z = last_x = last_y = last_z = 0;
+
+    if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion', deviceMotionHandler, false);
+    } else {
+        alert('抱歉，你的手机配置实在有些过不去，考虑换个新的再来试试吧');
+    }
+    var times = 0;
+
+    function deviceMotionHandler(eventData) {
+
+        var acceleration = eventData.accelerationIncludingGravity;
+        var curTime = new Date().getTime();
+
+
+        if ((curTime - last_update) > 100) {
+            var diffTime = curTime - last_update;
+            last_update = curTime;
+            x = acceleration.x;
+            y = acceleration.y;
+            z = acceleration.z;
+            var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+            var status = document.getElementById("status");
+
+            if (speed > SHAKE_THRESHOLD) {
+
+
+                doResult();
+                times++;
+
+            }
+            last_x = x;
+            last_y = y;
+            last_z = z;
+        }
+    }
+    //播放控制
+    function autoPlay() {
+        var index = 0;
+        audio_shake.addEventListener('ended', function () {
+            // Wait 500 milliseconds before next loop
+            setTimeout(function () {
+                if (index < 1) {
+                    audio_shake.play();
+                    index++
+                }
+            }, 500);
+        }, false);
+        audio_shake.play();
+    }
+    function autoPlayed() {
+        var audio = document.createElement("audio");
+        var index = 0;
+        audio.src = "../res/mp3/skresult.mp3";
+        audio.addEventListener('ended', function () {
+            // Wait 500 milliseconds before next loop
+            setTimeout(function () {
+                if (index < 0) {
+                    audio.play();
+                    index++
+                }
+            }, 0);
+        }, false);
+        audio.play();
+    }
+    function shaked_layer(){
+        layer.open({
+            style: 'padding:0;',
+            content: '<div><div class="open_title">恭喜你中奖了</div> <input type="text" class="open_input" placeholder="输入手机号码"/><button class="open_submit_btn"></button></div>'
+        });
+    }
+    function doResult() {
+        if (times > 0) {
+            return false;
+        }
+        autoPlay();
+        document.getElementById("hand").className = "hand hand-animate";
+
+        setTimeout(function () {
+            autoPlayed();
+        }, 2500);
+
+        setTimeout(function () {
+            times = 0;
+            shaked_layer();
+            document.getElementById("hand").className = "hand";
+        }, 3000);
+    }
+</script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>
