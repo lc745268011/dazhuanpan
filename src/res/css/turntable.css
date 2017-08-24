@@ -1,0 +1,37 @@
+body{background: #ffd800;}
+.htmleaf-container{margin-top: 0.4rem }
+#lottery{width:6.63rem;height:7.81rem;margin:0 auto;background: url("../images/bg1.png") 100% 100% no-repeat;position: relative;    background-size: cover;}
+#lottery table{width: 5rem;height: 5rem;position: absolute;margin:0 auto;left: 0;right: 0;margin-top: 1.6rem;}
+#lottery table td.lottery-unit{position:relative;width:1.90rem;height:1.70rem;text-align:center;color:#333;font-index:-999}
+#lottery table td img{display:block;width:1.90rem;height:1.70rem;}
+#lottery table td.lottery-center{height:1.70rem;display:block;text-decoration:none;background:url('../images/9.jpg') no-repeat center center; background-size: 90%;}
+#lottery table td.lottery-center a{width: 100%;display: inline-block;height: 100%}
+/*#lottery table td a:hover{background-image:url(img/11.jpg);}*/
+#lottery table td.active .mask{display:block;}
+.mask{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    background-color: rgba(252,211,4,0.5);
+    display:none;
+}
+.lottery-unit span{display: none}
+.lottery-unit-0{background: url("../images/1.jpg") center center no-repeat;    background-size: 90%;}
+.lottery-unit-1{background: url("../images/2.jpg") center center no-repeat;    background-size: 90%;}
+.lottery-unit-2{background: url("../images/3.jpg") center center no-repeat;    background-size: 90%;}
+.lottery-unit-7{background: url("../images/4.jpg") center center no-repeat;    background-size: 90%;}
+.lottery-unit-3{background: url("../images/4.jpg") center center no-repeat;    background-size: 90%;}
+.lottery-unit-6{background: url("../images/6.jpg") center center no-repeat;    background-size: 90%;}
+.lottery-unit-5{background: url("../images/7.jpg") center center no-repeat;    background-size: 90%;}
+.lottery-unit-4{background: url("../images/8.jpg") center center no-repeat;    background-size: 90%;}
+.record_list{width: 6.63rem;margin: 0 auto}
+.record_list img{width: 50%;margin: 0.5rem auto;display: block;}
+.record_list>div{border: 2px solid #fff;height: 1.6rem}
+.record_list>div>marquee{margin: 0.2rem auto;display: block}
+.record_list>div>marquee>ul{height: 1.2rem;font-size: 0.22rem;}
+
+.rule{width: 100%;margin: 0.5rem 0}
+.rule .rule-title{width: 100%;}
+.rule_con{width: 85%;margin: 0.5rem auto;font-size: 0.2rem;}
