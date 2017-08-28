@@ -96,9 +96,31 @@
         audio.play();
     }
     function shaked_layer(){
+//        layer.open({
+//            style: 'padding:0;',
+//            content: '<div><div class="open_title">恭喜你中奖了</div> <input type="text" class="open_input" placeholder="输入手机号码"/><button class="open_submit_btn"></button></div>'
+//        });
         layer.open({
-            style: 'padding:0;',
-            content: '<div><div class="open_title">恭喜你中奖了</div> <input type="text" class="open_input" placeholder="输入手机号码"/><button class="open_submit_btn"></button></div>'
+            content: '恭喜你获得XXX了',
+            style: 'width:80%',
+            btn:['前去领取','取消']
+            ,shadeClose:false
+            ,yes: function(index, layero){
+                layer.open({
+                    content: '<div class="form">' +
+                    '<div class="cl"><label for="tel">手机号</label><input type="num" id="tel"/></div>' +
+                    '<div class="cl"><label for="work_id">工号</label><input type="num" id="work_id"/></div>' +
+                    '<div class="cl"><label for="code">校验码</label><input type="num" id="code"/><button>获取校验码</button></div>' +
+                    '</div>',
+                    title:['恭喜你','background-color: #32a5fe; color:#fff;height:40px;line-height: 40px;'],
+                    style: 'width:80%',
+                    btn:['确认','取消'],
+                    shadeClose:false
+                })
+            }
+            ,btn2: function(index, layero){
+                layer.closeAll();
+            }
         });
     }
     function doResult() {

@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>微信大转盘抽奖</title>
 
+<link href="./res/css/reset.css" rel="stylesheet" type="text/css">
 <link href="./res/css/style.css" rel="stylesheet" type="text/css">
 <link href="./res/css/need/layer.css" rel="stylesheet" type="text/css">
 
@@ -56,14 +57,23 @@ $(document).ready(function(){
 			animateTo:angles+1800,
 			duration:8000,
 			callback:function (){
+				$('.turnplate').removeClass('run');
 				layer.open({
 					content: txt,
 					style: 'width:80%',
 					btn:['前去领取','取消']
+					,shadeClose:false
 					,yes: function(index, layero){
 						layer.open({
-							content: '领取成功',
+							content: '<div class="form">' +
+							'<div class="cl"><label for="tel">手机号</label><input type="num" id="tel"/></div>' +
+							'<div class="cl"><label for="work_id">工号</label><input type="num" id="work_id"/></div>' +
+							'<div class="cl"><label for="code">校验码</label><input type="num" id="code"/><button>获取校验码</button></div>' +
+							'</div>',
+							title:['恭喜你','background-color: #32a5fe; color:#fff;height:40px;line-height: 40px;'],
 							style: 'width:80%',
+							btn:['确认','取消'],
+							shadeClose:false
 						})
 					}
 					,btn2: function(index, layero){
@@ -76,6 +86,7 @@ $(document).ready(function(){
 	};
 
 	$('.pointer').click(function (){
+		$('.turnplate').addClass('run');
 		if(turnplate.bRotate)return;
 		turnplate.bRotate = !turnplate.bRotate;
 		//获取随机数(奖品个数范围内)
@@ -182,13 +193,13 @@ function drawRouletteWheel() {
 			  //measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
 			  ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
 		  }
-		  
+
 		  //添加对应图标
 		  if(text.indexOf("谢谢参与")>=0){
 			  var img= document.getElementById("sorry-img");
-			  img.onload=function(){  
+			  img.onload=function(){
 				  ctx.drawImage(img,-25,-50);
-			  }; 
+			  };
 			  ctx.drawImage(img,-25,-50);
 		  }else if(text.indexOf("100M")>=0){
 			  var img= document.getElementById("level-1");
@@ -226,29 +237,31 @@ function drawRouletteWheel() {
 </head>
 <body style="overflow-x:hidden;">
 	<div class="turntable">
-		<img src="./res/images/1.png" id="shan-img" style="display:none;" />
 		<img src="./res/images/2.png" id="sorry-img" style="display:none;" />
 		<img src="./res/images/level-1.png" id="level-1" style="display:none;" />
 		<img src="./res/images/level-2.png" id="level-2" style="display:none;" />
 		<img src="./res/images/level-3.png" id="level-3" style="display:none;" />
 		<img src="./res/images/level-4.png" id="level-4" style="display:none;" />
 		<div class="banner" style="background-image:url(./res/images/bg.png);background-size:100% 100%;">
-			<div class="turnplate" style="background-image:url(./res/images/turnplate-bg2.png);background-size:100% 100%;">
+			<div class="turnplate">
 				<canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
 				<img class="pointer" src="./res/images/turnplate-pointer1.png"/>
 			</div>
 		</div>
 	</div>
 	<div class="list">
-		<img src="./res/images/list-title.png" alt="" class="list-title"/>
-		<marquee direction="up" scrollamount="1">
-			<ul>
-				<li>恭喜XXXX</li>
-				<li>恭喜XXXX</li>
-				<li>恭喜XXXX</li>
-				<li>恭喜XXXX</li>
-			</ul>
-		</marquee>
+		<div class="list_title"></div>
+		<div class="list_con">
+			<marquee direction="up" scrollamount="1">
+				<ul>
+					<li>恭喜XXXX</li>
+					<li>恭喜XXXX</li>
+					<li>恭喜XXXX</li>
+					<li>恭喜XXXX</li>
+				</ul>
+			</marquee>
+		</div>
+		<div class="list_bottom"></div>
 	</div>
 	<div class="rule">
 		<div class="rule-title"></div>

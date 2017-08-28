@@ -13,9 +13,21 @@ a:hover{color:#c00; text-decoration:none;}
 .banner .turnplate canvas.item{width:100%;}
 .banner .turnplate img.pointer{position:absolute;width:26.5%;height:35.5%;left:37.6%;top:28%;}
 .turntable{margin: 0.5rem 0}
+.turnplate{background-image:url(../images/turnplate-bg2.png);background-size:100% 100%;}
+.turnplate.run{background-image:url(../images/turnplate-bg1.gif);background-size:100% 100%;}
+.form label{width: 20%;float: left;text-align: right;font-size: 0.24rem}
+.form>div{margin-bottom: 10px}
+.form input{float: left;margin-left: 10px;width: 75%;border: 1px solid #ccc;padding: 2px 5px;font-size: 0.24rem;height: 22px;box-sizing: border-box}
+.form button{width: 30%;float: left;margin-left:10px;background: #fff;border: 1px solid #ccc;font-size: 0.20rem;height: 22px;box-sizing: border-box;line-height: 22px;padding: 0 5px; }
+.form>div:last-child>input{width: 41%}
 /*中奖名单*/
-.list{background: url("../images/list.jpg") no-repeat;background-size: 100% 100%;padding-top: 0.5rem;padding-bottom:0.5rem;width: 90%;margin: 0 auto;}
-.list .list-title{width: 50%;margin: 0.2rem auto;display: block;}
+.list{width: 90%;margin: 0 auto;}
+.list_title{margin-top: 0.2rem;display: block;background: url("../images/list-top.png") no-repeat;background-size: 100%;height: 1.1rem}
+.list_con{width: 100%;font-size: 0.2rem;background: url("../images/list-middle.png") no-repeat;background-size: 100% 100%;padding: 0 0.4rem;box-sizing: border-box}
+.list_bottom{width: 100%;font-size: 0.2rem;background: url("../images/list-bottom.png") no-repeat;background-size: 100% 100%;margin-bottom: 0.2rem;height: 0.4rem}
+
+/*.list{background: url("../images/list.jpg") no-repeat;background-size: 100% 100%;padding-top: 0.5rem;padding-bottom:0.5rem;width: 90%;margin: 0 auto;}*/
+/*.list .list-title{width: 50%;margin: 0.2rem auto;display: block;}*/
 .list ul{height: 0.8rem;width: 70%;margin: 0 auto;font-size: 0.2rem;}
 /*活动规则*/
 .rule{width: 90%;margin: 0.5rem auto;padding-bottom:0.5rem;height: 6.5rem;}

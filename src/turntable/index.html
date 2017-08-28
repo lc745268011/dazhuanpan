@@ -155,9 +155,31 @@
                 lottery.prize = index;
             } else {
                 if (lottery.times > lottery.cycle + 10 && ((lottery.prize == 0 && lottery.index == 7) || lottery.prize == lottery.index + 1)) {
+//                    layer.open({
+//                        content: "恭喜你获得"+$('.lottery-unit-' + lottery.prize + ' span').text()
+//                        , btn: '我知道了'
+//                    });
                     layer.open({
-                        content: $('.lottery-unit-' + lottery.prize + ' span').text()
-                        , btn: '我知道了'
+                        content: "恭喜你获得"+$('.lottery-unit-' + lottery.prize + ' span').text(),
+                        style: 'width:80%',
+                        btn:['前去领取','取消']
+                        ,shadeClose:false
+                        ,yes: function(index, layero){
+                            layer.open({
+                                content: '<div class="form">' +
+                                '<div class="cl"><label for="tel">手机号</label><input type="num" id="tel"/></div>' +
+                                '<div class="cl"><label for="work_id">工号</label><input type="num" id="work_id"/></div>' +
+                                '<div class="cl"><label for="code">校验码</label><input type="num" id="code"/><button>获取校验码</button></div>' +
+                                '</div>',
+                                title:['恭喜你','background-color: #fc5566; color:#fff;height:40px;line-height: 40px;'],
+                                style: 'width:80%',
+                                btn:['确认','取消'],
+                                shadeClose:false
+                            })
+                        }
+                        ,btn2: function(index, layero){
+                            layer.closeAll();
+                        }
                     });
                     lottery.speed += 110;
 
