@@ -37,6 +37,7 @@ body{background: #ffd800;}
 .rule_con{width: 85%;margin: 0.5rem auto;font-size: 0.2rem;}
 .form label{width: 20%;float: left;text-align: right;font-size: 0.24rem}
 .form>div{margin-bottom: 10px}
-.form input{float: left;margin-left: 10px;width: 75%;border: 1px solid #ccc;padding: 2px 5px;font-size: 0.24rem;height: 22px;box-sizing: border-box;border-radius:4px;}
-.form button{width: 30%;float: left;margin-left:10px;background: #fc5566;border: 0;color:#fff;border-radius:4px;font-size: 0.20rem;height: 22px;box-sizing: border-box;line-height: 22px;padding: 0 5px; }
+.form input{float: left;margin-left: 10px;width: 75%;border: 1px solid #ccc;padding: 5px;font-size: 0.24rem;height: 30px;box-sizing: border-box;border-radius:4px;}
+.form button{width: 32%;float: left;margin-left:5px;background: #fc5566;border: 0;color:#fff;border-radius:4px;font-size: 0.20rem;height: 30px;box-sizing: border-box;line-height: 30px;padding: 0 5px; }
 .form>div:last-child>input{width: 41%}
+.layui-m-layersection .alert .layui-m-layercont{padding: 20px;}
