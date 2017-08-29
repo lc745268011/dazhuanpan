@@ -13,10 +13,11 @@
 </head>
 <body>
     <div id="hand" class="hand">
-        <img src="../res/images/hand.png">
+        <img src="../res/images/shaked_bg2.png">
     </div>
     <button onclick="doResult()" class="shaked_btn"></button>
-    <a href="#" class="activity_rules">活动规则</a>
+    <a href="javascript:;" class="activity_rules">活动规则</a>
+    <script src="../res/js/jquery-1.10.2.js"></script>
     <script src="../res/js/layer.js"></script>
 <script>
     var audio_shake;
@@ -100,8 +101,9 @@
 //            style: 'padding:0;',
 //            content: '<div><div class="open_title">恭喜你中奖了</div> <input type="text" class="open_input" placeholder="输入手机号码"/><button class="open_submit_btn"></button></div>'
 //        });
+        $('#hand img').attr('src','../res/images/shaked_bg2.png');
         layer.open({
-            content: '恭喜你获得XXX了',
+            content: '<img src="../res/images/congratulate.png" style="width: 0.55rem;margin-right: 0.2rem"/>恭喜你获得XXX了',
             style: 'width:80%',
             btn:['前去领取','取消']
             ,shadeClose:false
@@ -124,11 +126,13 @@
         });
     }
     function doResult() {
+
         if (times > 0) {
             return false;
         }
         autoPlay();
-        document.getElementById("hand").className = "hand hand-animate";
+//        document.getElementById("hand").className = "hand hand-animate";
+        $('#hand img').attr('src','../res/images/shaked_bg1.gif');
 
         setTimeout(function () {
             autoPlayed();
@@ -140,6 +144,26 @@
             document.getElementById("hand").className = "hand";
         }, 3000);
     }
+    $('.activity_rules').click(function(){
+        layer.open({
+            className: 'popuo-login',
+            title:['活动说明','background-color: #32a5fe; color:#fff;height:40px;line-height: 40px;'],
+            content:'<div style="text-align: left">1.本活动仅限山东联通、移动、电信手机号码，其他号码无效。<br/>' +
+            '2.领取后，流量自动充值，每个山东联通号仅限参加一次活动，当月生效，月底失效，且用户优先使用该赠送流量。<br/>' +
+            '3.联通：黑户、欠费、停机、上网卡、3G-20元预付费卡等部分特殊卡号不支持活动,无法领取，望请见谅。<br/>' +
+            '移动：停机欠费、黑名单、转套餐或者品牌未生效的号码不可充值，pose机、电子狗卡、云端流量卡这些卡流量均无法充值到账。电信：停机欠费、黑名单、天翼无线宽带套餐用户、预付费手机上网时长计费用户、其他电信规则限制用户均无法领取流量。<br/>' +
+            '4.因参与活动人数众多，系统会根据提交时间排队处理，请耐心等待，24小时内到账。<br/>' +
+            '活动声明：<br/>' +
+            '凡参与本次活动的用户即视为同意本规则所述的各项规定，兖州九龙贵和购物广场有限公司、中国联通济宁分公司、云上流量商城在法律允许范围内对本次活动进行最终解释。1.本活动仅限山东联通、移动、电信手机号码，其他号码无效。<br/>' +
+            '2.领取后，流量自动充值，每个山东联通号仅限参加一次活动，当月生效，月底失效，且用户优先使用该赠送流量。<br/>' +
+            '3.联通：黑户、欠费、停机、上网卡、3G-20元预付费卡等部分特殊卡号不支持活动,无法领取，望请见谅。<br/>' +
+            '移动：停机欠费、黑名单、转套餐或者品牌未生效的号码不可充值，pose机、电子狗卡、云端流量卡这些卡流量均无法充值到账。电信：停机欠费、黑名单、天翼无线宽带套餐用户、预付费手机上网时长计费用户、其他电信规则限制用户均无法领取流量。<br/>' +
+            '4.因参与活动人数众多，系统会根据提交时间排队处理，请耐心等待，24小时内到账。<br/>' +
+            '活动声明：<br/>' +
+            '凡参与本次活动的用户即视为同意本规则所述的各项规定，兖州九龙贵和购物广场有限公司、中国联通济宁分公司、云上流量商城在法律允许范围内对本次活动进行最终解释。</div>',
+            style: 'height:9rem',
+        })
+    })
 </script>
 <script>
     (function (doc, win) {

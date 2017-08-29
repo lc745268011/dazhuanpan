@@ -159,8 +159,9 @@
 //                        content: "恭喜你获得"+$('.lottery-unit-' + lottery.prize + ' span').text()
 //                        , btn: '我知道了'
 //                    });
+                    $("#lottery").css({'background':'url("../res/images/bg1.png") 100% 100% no-repeat','background-size':'cover'})
                     layer.open({
-                        content: "恭喜你获得"+$('.lottery-unit-' + lottery.prize + ' span').text(),
+                        content: '<img src="../res/images/congratulate.png" style="width: 0.55rem;margin-right: 0.2rem"/>恭喜你获得'+$('.lottery-unit-' + lottery.prize + ' span').text(),
                         style: 'width:80%',
                         btn:['前去领取','取消']
                         ,shadeClose:false
@@ -203,6 +204,7 @@
     window.onload = function () {
         lottery.init('lottery');
         $("#lottery a").click(function () {
+            $("#lottery").css({'background':'url("../res/images/run.gif") 100% 100% no-repeat','background-size':'cover'})
             if (click) {//click控制一次抽奖过程中不能重复点击抽奖按钮，后面的点击不响应
                 return false;
             } else {
