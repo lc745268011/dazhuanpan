@@ -118,8 +118,15 @@
                     '</div>',
                     title:['恭喜你','background-color: #32a5fe; color:#fff;height:40px;line-height: 40px;'],
                     style: 'width:80%',
-                    btn:['确认','取消'],
-                    shadeClose:false
+                    btn:'确认',
+                    shadeClose:false,
+                    yes:function(index,layero){
+                        layer.open({
+                            content: '恭喜你领取成功'
+                            ,skin: 'msg'
+                            ,time: 2 //2秒后自动关闭
+                        })
+                    }
                 })
             }
             ,btn2: function(index, layero){
