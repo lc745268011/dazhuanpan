@@ -73,7 +73,7 @@ $(document).ready(function(){
 							'</div>',
 							title:['恭喜你','background-color: #32a5fe; color:#fff;height:40px;line-height: 40px;'],
 							style: 'width:80%',
-							btn:'确认',
+							btn:['确认','取消'],
 							shadeClose:false,
 							yes:function(index,layero){
 								layer.open({
@@ -244,6 +244,7 @@ function drawRouletteWheel() {
 </script>
 </head>
 <body style="overflow-x:hidden;">
+<div class="watch">预览模式</div>
 <div class="banner-top"><img src="./res/images/banner.jpg" alt=""/></div>
 	<div class="turntable">
 		<img src="./res/images/2.png" id="sorry-img" style="display:none;" />

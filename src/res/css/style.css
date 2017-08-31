@@ -36,3 +36,4 @@ a:hover{color:#c00; text-decoration:none;}
 .rule_con{width: 100%;font-size: 0.2rem;background: url("../images/rule_middle.png") no-repeat;background-size: 100% 100%;padding: 0 0.4rem;box-sizing: border-box}
 .rule-bottom{width: 100%;font-size: 0.2rem;background: url("../images/rule_bottom.png") no-repeat;background-size: 100% 100%;margin-bottom: 0.2rem;height: 0.4rem}
 .layui-m-layersection .alert .layui-m-layercont{padding: 20px;}
+.watch{width: 100%;position: fixed;top: 0;color: #fff;background: #ee6f00;opacity: 0.9;height: 1rem;font-size: 0.3rem;line-height: 1rem;text-align: center;z-index: 9999}
