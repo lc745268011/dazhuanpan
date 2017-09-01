@@ -28,7 +28,7 @@ body{background: #ffd800;}
 .lottery-unit-4{background: url("../images/8.jpg") center center no-repeat;    background-size: 90%;}
 .record_list{width: 6.63rem;margin: 0 auto}
 .record_list img{width: 50%;margin: 0.5rem auto;display: block;}
-.record_list>div{border: 2px solid #fff;height: 1.6rem}
+.record_list>div{border: 2px solid #fff;height: 1.6rem;    padding: 0.2rem 0.5rem;}
 .record_list>div>marquee{margin: 0.2rem auto;display: block}
 .record_list>div>marquee>ul{height: 1.2rem;font-size: 0.22rem;}
 
