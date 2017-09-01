@@ -15,7 +15,7 @@ a:hover{color:#c00; text-decoration:none;}
 .banner .turnplate img.pointer{position:absolute;width:26.5%;height:35.5%;left:37.6%;top:28%;}
 .turntable{margin: 0.5rem 0}
 .turnplate{background-image:url(../images/turnplate-bg2.png);background-size:100% 100%;}
-.turnplate.run{background-image:url(../images/turnplate-bg1.gif);background-size:100% 100%;}
+#wheelcanvas.run{background-image:url(../images/turnplate-bg1.gif);background-size:100% 100%;}
 .form label{width: 20%;float: left;text-align: right;font-size: 0.24rem}
 .form>div{margin-bottom: 10px}
 .form input{float: left;margin-left: 10px;width: 75%;border: 1px solid #ccc;padding: 5px;font-size: 0.24rem;height: 30px;box-sizing: border-box;border-radius:4px;}

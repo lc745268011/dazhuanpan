@@ -57,7 +57,7 @@ $(document).ready(function(){
 			animateTo:angles+1800,
 			duration:8000,
 			callback:function (){
-				$('.turnplate').removeClass('run');
+				$('#wheelcanvas').removeClass('run');
 				layer.open({
 					content: '<img src="./res/images/congratulate.png" style="width: 0.55rem;margin-right: 0.2rem"/>'+txt,
 					style: 'width:80%',
@@ -94,7 +94,7 @@ $(document).ready(function(){
 	};
 
 	$('.pointer').click(function (){
-		$('.turnplate').addClass('run');
+		$('#wheelcanvas').addClass('run');
 		if(turnplate.bRotate)return;
 		turnplate.bRotate = !turnplate.bRotate;
 		//获取随机数(奖品个数范围内)
